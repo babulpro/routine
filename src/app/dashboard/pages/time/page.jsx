@@ -83,7 +83,7 @@ export default function TimeTrackerPage() {
   const fetchTimeEntries = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await fetch("/api/user/timeEntry");
+      const res = await fetch("/api/user/timeEntry",{ cache: 'force-cache' });
       const data = await res.json();
 
       if (data.status === "success") {

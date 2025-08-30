@@ -13,7 +13,7 @@ export default function EditHabitPage() {
   useEffect(() => {
     const fetchHabitData = async () => {
       try {
-        const response = await fetch(`/api/user/habit/ById?id=${id}`);
+        const response = await fetch(`/api/user/habit/ById?id=${id}`,{ cache: 'force-cache' });
         if (!response.ok) throw new Error("Failed to fetch habit data");
         const { data } = await response.json(); 
         setFormData(data);

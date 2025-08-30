@@ -17,7 +17,7 @@ export default function HabitTracker() {
   useEffect(() => {
     const fetchHabits = async () => {
       try {
-        const response = await fetch("/api/user/habit", { cache: "no-cache" });
+        const response = await fetch("/api/user/habit",{ cache: 'force-cache' });
         if (!response.ok) throw new Error("Failed to fetch habits");
         const { data } = await response.json();
         setHabits(data || []);

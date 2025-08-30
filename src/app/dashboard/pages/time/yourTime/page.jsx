@@ -15,7 +15,7 @@ export default function TimeTrackerPage() {
   const fetchTimeEntries = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api/user/timeEntry');
+      const response = await fetch('/api/user/timeEntry',{ cache: 'force-cache' });
       const data = await response.json();
       if (data.status === 'success') {
         setEntries(data.data || []);

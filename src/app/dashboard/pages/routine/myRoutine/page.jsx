@@ -14,7 +14,7 @@ export default function Page() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/user/routine", { cache: "no-cache" });
+        const response = await fetch("/api/user/routine",{ cache: 'force-cache' });
         if (!response.ok) throw new Error("Failed to fetch routines");
         const { data } = await response.json();
         setRoutines(data);

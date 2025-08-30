@@ -13,7 +13,7 @@ export default function EditRoutinePage() {
   useEffect(() => {
     const fetchRoutine = async () => {
       try {
-        const response = await fetch(`/api/user/routine/ById?id=${id}`);
+        const response = await fetch(`/api/user/routine/ById?id=${id}`,{ cache: 'force-cache' });
         if (!response.ok) throw new Error("Failed to fetch routine");
         const { data } = await response.json();
         setFormData(data);
@@ -114,7 +114,7 @@ export default function EditRoutinePage() {
             <div className="flex justify-center gap-4 pt-4">
               <button
                 type="button"
-                onClick={() => router.push("/dashboard/pages/routine")}
+                onClick={() => router.push("/dashboard/pages/routine/myRoutine")}
                 className="btn btn-outline btn-error"
               >
                 Cancel
