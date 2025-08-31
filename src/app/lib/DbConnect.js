@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI =
-'mongodb+srv://babul1946:babul@practice.n2ruz.mongodb.net/routine?retryWrites=true&w=majority'
+const MONGODB_URI =process.env.MONGODB_URI || 'mongodb+srv://babul1946:babul@practice.n2ruz.mongodb.net/routine?retryWrites=true&w=majority'
 // "mongodb://localhost:27017/routine"
 
 if (!MONGODB_URI) {
